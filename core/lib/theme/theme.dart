@@ -6,17 +6,22 @@ import 'color.dart';
 import 'type.dart';
 
 abstract class AppTheme {
-  static ThemeData light = ThemeData(
-      useMaterial3: true,
-      textTheme: GoogleFonts.notoSansTextTheme(Type.notoSans),
-      colorScheme: lightColors
-  );
+  static ThemeData light(ColorScheme? dynamic) {
+    return ThemeData(
+        useMaterial3: true,
+        textTheme: GoogleFonts.notoSansTextTheme(Type.notoSans),
+        colorScheme: dynamic ?? lightColors
+    );
+  }
 
-  static ThemeData dark = ThemeData(
-    useMaterial3: true,
-    textTheme: GoogleFonts.notoSansTextTheme(Type.notoSans),
-    colorScheme: darkColors
-  );
+  static ThemeData dark(ColorScheme? dynamic) {
+    return ThemeData(
+        useMaterial3: true,
+        textTheme: GoogleFonts.notoSansTextTheme(Type.notoSans),
+        colorScheme: dynamic ?? darkColors
+    );
+  }
+
 }
 
 const lightColors = ColorScheme(

@@ -1,5 +1,7 @@
 import 'package:core/theme/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:dynamic_color/dynamic_color.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,11 +13,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: AppTheme.light,
-      darkTheme: AppTheme.dark,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    return DynamicColorBuilder(
+      builder: (lightDynamic, darkDynamic) => GetMaterialApp(
+        title: 'Flutter AWAWAWA',
+        theme: AppTheme.light(lightDynamic),
+        darkTheme: AppTheme.dark(darkDynamic),
+        home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      ),
     );
   }
 }
